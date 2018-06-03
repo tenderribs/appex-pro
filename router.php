@@ -5,10 +5,12 @@
         if ($page == '') {
             displayHomePage($lang);
         }
-        //  else if ($page == 'features') {
-        //     require_once('pages/features.html');
-
-        // } else if ($page == 'system') {
+          else if ($page == 'features') {
+            displayFeaturesPage($lang);
+        } else {
+            echo 'bla bla 404';
+        }
+        // else if ($page == 'system') {
         //     require_once('pages/system.html');
 
         // } else if ($page == 'blog') {
@@ -24,5 +26,4 @@
         //     require_once('pages/welcome.php');
         // }
     }
-    
  ?>
