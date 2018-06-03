@@ -1,19 +1,39 @@
  <?php 
-    require_once('func.php');
-
-    function route($page,$lang,$action) {
+    function route($pdo,$page,$lang,$action) {
         if ($page == '') {
-            displayHomePage($lang);
-        }
-          else if ($page == 'features') {
-            displayFeaturesPage($lang);
-        } else {
-            echo 'bla bla 404';
-        }
-        // else if ($page == 'system') {
-        //     require_once('pages/system.html');
+            $request = $_POST;   
 
-        // } else if ($page == 'blog') {
+            if ($action == 'register') {
+                // echo 'pdo '.isset($pdo);
+                $result = authRegister($pdo,$request);
+                if ($result){
+                    // displayHomePage($lang);
+                    require_once('pages/welcome.php');
+                }
+            } else if ($action == 'login') {
+                $result = authLogin($pdo,$request);
+                if ($result){
+                    // displayHomePage($lang);
+                    require_once('pages/welcome.php');
+                }
+            } else if ($action == 'logout') {
+                authLogout($pdo,$request);
+            } else {
+                displayHomePage($lang);
+            }
+
+        } else if ($page == 'features') {
+            displayFeaturesPage($lang);
+        } else if ($page == 'register') {
+            require_once('pages/auth/register.html');
+        } else if ($page == 'login') {
+            require_once('pages/auth/login.html');
+        }  else if ($page == 'welcome') {
+            require_once('pages/welcome.php');
+        } 
+
+
+        // else if ($page == 'blog') {
         //     require_once('pages/blog.html');
         // }
         // else if ($page == 'login') {
