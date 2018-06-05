@@ -65,19 +65,16 @@
         echo            '
                             </div>
                         </div>
+
                         <div class="navbar-item">
-                            <div class="field is-grouped">
-                                <p class="control">
-                                <a class="button " href="index.php?la=de">
-                                    <span>DE</span>
-                                </a>
-                                </p>
-                                <p class="control">
-                                <a class="button is-success" href="index.php">
-                                    <span>EN</span>
-                                </a>
-                                </p>
-                            </div>
+                            <div class="field is-grouped">';
+                            if ($lang == 'de') {
+                                    require_once('pages/navbar/deu.html');
+                            }
+                            else if ($lang == 'en') {
+                                    require_once('pages/navbar/eng.html');
+                            }
+                            echo'</div>
                         </div>
 
                     </div>

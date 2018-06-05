@@ -1,2 +1,2 @@
-# appex-noob
-The nooby version of Appex, to be revised shortly
+# appex-pro
+The improved version of appex

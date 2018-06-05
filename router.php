@@ -1,24 +1,29 @@
  <?php 
-    function route($pdo,$page,$lang,$action) {
+    function route($pdo,$page,$lang,$action) {        
         if ($page == '') {
+            //empty page in url, check if there are any actions requested
             $request = $_POST;   
 
             if ($action == 'register') {
                 // echo 'pdo '.isset($pdo);
                 $result = authRegister($pdo,$request);
                 if ($result){
+                    //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
                     require_once('pages/welcome.php');
                 }
-            } else if ($action == 'login') {
+            }   else if ($action == 'login') {
                 $result = authLogin($pdo,$request);
                 if ($result){
+                    //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
                     require_once('pages/welcome.php');
                 }
-            } else if ($action == 'logout') {
+                
+            }   else if ($action == 'logout') {
                 authLogout($pdo,$request);
-            } else {
+            }   else {
+                //if there was no action found in the URL then display the homepage with the according language
                 displayHomePage($lang);
             }
 
