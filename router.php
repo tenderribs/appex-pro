@@ -1,17 +1,68 @@
  <?php 
-    require_once('func.php');
-
-    function route($page,$lang,$action) {
+    function route($pdo,$page,$lang,$action) {        
         if ($page == '') {
-            displayHomePage($lang);
-        }
-        //  else if ($page == 'features') {
-        //     require_once('pages/features.html');
+            //empty page in url, check if there are any actions requested
+            $request = $_POST;   
 
-        // } else if ($page == 'system') {
-        //     require_once('pages/system.html');
+            if ($action == 'register') {
+                // echo 'pdo '.isset($pdo);
+                $result = authRegister($pdo,$request);
+                if ($result) {
+                    //if succesfully logged in, display welcome page
+                    // displayHomePage($lang);
+                    require_once('pages/manage.php');
+                }
+            }   else if ($action == 'login') {
+                $result = authLogin($pdo,$request);
+                if ($result) {
+                    //if succesfully logged in, display welcome page
+                    // displayHomePage($lang);
+                    require_once('pages/manage.php');
+                }
+                
+            }   else if ($action == 'logout') {
+                authLogout($pdo,$request);
+            }   else if ($action == 'storeBlogPost') {
+                storeBlogPost($pdo,$request);
+            }   else if ($action == 'loadBlogPosts') {
+                $posts = loadBlogPosts($pdo,$request);
+                if ($posts) {
+                    //if succesfully logged in, display welcome page
+                    // displayHomePage($lang);
+                    foreach ($posts as $post ) {
+                        echo "title : ".$post['title'];
+                        echo "<br/>";
+                        
+                        echo "text : ".$post['text'];
+                        echo "<br/>";
+                        
+                        echo "lang : ". $post['lang'];
+                        echo "<br/>";
+                        echo "published_at : ". $post['published_at'];
+                        echo "<br/>";
+                        echo "<br/>";
+                    }
+                    
+                }
+            }   else {
+                //if there was no action found in the URL then display the homepage with the according language
+                displayHomePage($lang);
+            }
 
-        // } else if ($page == 'blog') {
+        } else if ($page == 'features') {
+            displayFeaturesPage($lang);
+        } else if ($page == 'register') {
+            require_once('pages/auth/register.html');
+        } else if ($page == 'login') {
+            require_once('pages/auth/login.html');
+        }  else if ($page == 'manage') {
+            require_once('pages/manage.php');
+        } else if ($page == 'createBlogPost') {
+            require_once('pages/createBlogPost.php');
+        } 
+
+
+        // else if ($page == 'blog') {
         //     require_once('pages/blog.html');
         // }
         // else if ($page == 'login') {
@@ -24,5 +75,4 @@
         //     require_once('pages/welcome.php');
         // }
     }
-    
  ?>
