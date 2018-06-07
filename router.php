@@ -22,6 +22,8 @@
                 
             }   else if ($action == 'logout') {
                 authLogout($pdo,$request);
+            }   else if ($action == 'storeBlogPost') {
+                storeBlogPost($pdo,$request);
             }   else {
                 //if there was no action found in the URL then display the homepage with the according language
                 displayHomePage($lang);
@@ -35,6 +37,8 @@
             require_once('pages/auth/login.html');
         }  else if ($page == 'manage') {
             require_once('pages/manage.php');
+        } else if ($page == 'createBlogPost') {
+            require_once('pages/createBlogPost.php');
         } 
 
 
