@@ -24,6 +24,26 @@
                 authLogout($pdo,$request);
             }   else if ($action == 'storeBlogPost') {
                 storeBlogPost($pdo,$request);
+            }   else if ($action == 'loadBlogPosts') {
+                $posts = loadBlogPosts($pdo,$request);
+                if ($posts) {
+                    //if succesfully logged in, display welcome page
+                    // displayHomePage($lang);
+                    foreach ($posts as $post ) {
+                        echo "title : ".$post['title'];
+                        echo "<br/>";
+                        
+                        echo "text : ".$post['text'];
+                        echo "<br/>";
+                        
+                        echo "lang : ". $post['lang'];
+                        echo "<br/>";
+                        echo "published_at : ". $post['published_at'];
+                        echo "<br/>";
+                        echo "<br/>";
+                    }
+                    
+                }
             }   else {
                 //if there was no action found in the URL then display the homepage with the according language
                 displayHomePage($lang);

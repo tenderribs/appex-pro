@@ -39,7 +39,7 @@
                 Publish
             </label>
             <label class="radio">
-            <input type="radio" name="published" value="no">
+            <input type="radio" name="published" value="no" checked>
                 Draft
             </label>
         </div>
@@ -54,7 +54,7 @@
 
         <br/>
         <br/>
-        
+
         <div class="field is-grouped">
         <div class="control">
             <button class="button is-info">Submit</button>
