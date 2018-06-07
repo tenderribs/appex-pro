@@ -38,13 +38,14 @@
         }
     }
 
-    function loadBlogPosts($pdo) {
+    function loadBlogPosts($pdo,$lang) {
         //Construct the SQL statement and prepare it.
-        $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE published = :published";
+        $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE published = :published AND lang = :lang AND published_at <= NOW()";
         $stmt = $pdo->prepare($sql);
 
         //Bind the provided email to our prepared statement.
         $stmt->bindValue(':published', true,PDO::PARAM_INT);
+        $stmt->bindValue(':lang', $lang,PDO::PARAM_STR);
 
         //Execute.
         $stmt->execute();

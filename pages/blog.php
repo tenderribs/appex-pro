@@ -1,22 +1,7 @@
 <?php
-    $posts = loadBlogPosts($pdo);
-    if ($posts) {
-        //if succesfully logged in, display welcome page
-        // displayHomePage($lang);
-        foreach ($posts as $post ) {
-            echo "title : ".$post['title'];
-            echo "<br/>";
-            
-            echo "text : ".$post['text'];
-            echo "<br/>";
-            
-            echo "lang : ". $post['lang'];
-            echo "<br/>";
-            echo "published_at : ". $post['published_at'];
-            echo "<br/>";
-            echo "<br/>";
-        }
-    }
+    $lang = isset($_GET["la"]) ? $_GET["la"] : 'en';
+    $posts = loadBlogPosts($pdo,$lang);
+
 
 echo '<div class="marginTop">
         <br>
@@ -61,8 +46,41 @@ echo '<div class="marginTop">
                         </article>
                     </article>
                     </div>
-                </div>
-            </div>
+                </div>';
+
+                if ($posts) {
+                    //if succesfully logged in, display welcome page
+                    // displayHomePage($lang);
+                    foreach ($posts as $post ) {
+                        echo '<div class="tile is-parent">';
+                        echo '<article class="tile is-child box">
+                                   
+                                    <article class="is-dark">
+                                        <p class="title">'
+                                            .$post['title'].
+                                            '<span class="tag ">'
+                                                .$post['published_at'].
+                                            '</span> 
+                                        </p> 
+                                        <div class="message-body">
+     
+                                            <p>'.$post['text'].'</p>
+                                    </article>
+                                 </article>';
+                        echo '</div>';
+ 
+                        
+                        // echo "text : ".$post['text'];
+                        // echo "<br/>";
+                        
+                        // echo "lang : ". $post['lang'];
+                        // echo "<br/>";
+                        // echo "published_at : ". $post['published_at'];
+   
+                    }
+                }
+
+        echo '</div>
         </div>
         <p class="bottomspaceBlog">';
 ?>
