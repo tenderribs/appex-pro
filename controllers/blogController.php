@@ -38,7 +38,7 @@
         }
     }
 
-    function loadBlogPosts($pdo,$request) {
+    function loadBlogPosts($pdo) {
         //Construct the SQL statement and prepare it.
         $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE published = :published";
         $stmt = $pdo->prepare($sql);
