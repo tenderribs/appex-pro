@@ -1,6 +1,6 @@
 <?php
-    $DbName = "appex_home";
-    $username = "appex_home";
-    $password = "XEXujGwHn1POMkNH";
+    $DbName = "appex_homepage";
+    $username = "appex_homepage";
+    $password = "fTNqPGQnLOsa1H8s";
     $servername = "localhost";   
 ?>
