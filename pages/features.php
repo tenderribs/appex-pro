@@ -1,5 +1,8 @@
 <br>
-<br>
+<br>¨
+<?php
+function displayFeaturesPage()
+
 <div class="tiles" class="marginTop">
     <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
@@ -82,3 +85,4 @@
         </div>
     </div>
     <p class="bottomspace">
+?>
