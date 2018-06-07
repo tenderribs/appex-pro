@@ -7,17 +7,17 @@
             if ($action == 'register') {
                 // echo 'pdo '.isset($pdo);
                 $result = authRegister($pdo,$request);
-                if ($result){
+                if ($result) {
                     //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
-                    require_once('pages/welcome.php');
+                    require_once('pages/manage.php');
                 }
             }   else if ($action == 'login') {
                 $result = authLogin($pdo,$request);
-                if ($result){
+                if ($result) {
                     //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
-                    require_once('pages/welcome.php');
+                    require_once('pages/manage.php');
                 }
                 
             }   else if ($action == 'logout') {
@@ -33,8 +33,8 @@
             require_once('pages/auth/register.html');
         } else if ($page == 'login') {
             require_once('pages/auth/login.html');
-        }  else if ($page == 'welcome') {
-            require_once('pages/welcome.php');
+        }  else if ($page == 'manage') {
+            require_once('pages/manage.php');
         } 
 
 

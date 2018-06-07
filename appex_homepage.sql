@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2018 at 10:44 AM
+-- Generation Time: Jun 07, 2018 at 09:35 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -35,6 +35,7 @@ CREATE TABLE `contents` (
   `place` varchar(190) NOT NULL,
   `blog` tinyint(4) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
+  `lang` varchar(3) NOT NULL DEFAULT 'en',
   `updated_at` date NOT NULL,
   `created_at` int(11) NOT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
@@ -85,7 +86,7 @@ ALTER TABLE `contents`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
