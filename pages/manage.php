@@ -19,6 +19,8 @@
                                 </span>
                             </a>';
 
+                    // echo $_SESSION["user_id"];
+
                 } else {
                     echo "Please log in to your account in order to use all features of AppEx.ch";
                 }

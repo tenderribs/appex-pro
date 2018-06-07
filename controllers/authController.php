@@ -43,10 +43,21 @@
         //Execute the statement and insert the new account.
         $result = $stmt->execute();
         
+        //Construct the SQL statement and prepare it.
+        $sql = "SELECT id, email FROM users WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+
+        //Bind the provided email to our prepared statement.
+        $stmt->bindValue(':email', $email,PDO::PARAM_STR);
+        //Execute.
+        $stmt->execute();
+        //Fetch the row.
+        $user = $stmt->fetch(PDO::FETCH_ASSOC); 
+
         //If the signup process is successful.
-        if($result){
+        if(isset($user['email'])){
             //What you do here is up to you!
-            return set_session($request); /* start the session */
+            return set_session($user); /* start the session */
         }
     }
 
@@ -57,7 +68,7 @@
         $hashedPassword = hash_password($password);
         
         //Construct the SQL statement and prepare it.
-        $sql = "SELECT email FROM users WHERE email = :email AND password = :hashedPassword";
+        $sql = "SELECT id, email FROM users WHERE email = :email AND password = :hashedPassword";
         $stmt = $pdo->prepare($sql);
 
         //Bind the provided email to our prepared statement.
@@ -68,10 +79,10 @@
         $stmt->execute();
 
         //Fetch the row.
-        $row = $stmt->fetch(PDO::FETCH_ASSOC); 
+        $user = $stmt->fetch(PDO::FETCH_ASSOC); 
             
-        if (isset($row['email'])) {
-            return set_session($request); /* start the session */
+        if (isset($user['email'])) {
+            return set_session($user); /* start the session */
         }
     }
 
@@ -99,7 +110,7 @@
         return  $hashedPassword;
     }
 
-    function set_session($request) {
+    function set_session($user) {
         // php session
         // hmmmm , hard to explain, its used to store values accros multi requests made by a single user/client
         // for example when the user logs in we can store his info's such as Name,Email,Role and etc
@@ -110,7 +121,8 @@
 
         $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");
 
-        $_SESSION["email"] = $request['email'];
+        $_SESSION["user_id"] = $user['id'];
+        $_SESSION["email"] = $user['email'];
 
         return $_SESSION;
     }
