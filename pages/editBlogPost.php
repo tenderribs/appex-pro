@@ -24,7 +24,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                             
                             
                                 <div class="field">
-                                    <label class="label">Language is '.$post['lang'].'</label>
+                                    <label class="label">Language</label>
                                     <div class="control">
                                         <div class="select">
                                         <select name="language">
