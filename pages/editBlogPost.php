@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                 <div class="card rounded">
                     <div class="card-content ">
                         <div class="content">
-                            <form action="index.php?action=updateBlogPost&post_id='.$post['id'].'" method="post">
+                            <form action="index.php?action=updateBlogPost&post_id='.$post['id'].'&la='.$lang.'" method="post">
                                 <span class="is-size-3"> Edit a blog post </span>
                                 <br/>
                                 <br/>

@@ -1,11 +1,13 @@
 <?php
-    if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isset($_SESSION["user_role"])  && $_SESSION["user_role"] == "admin")
+$lang = isset($_GET["la"]) ? $_GET["la"] : 'en';
+
+if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isset($_SESSION["user_role"])  && $_SESSION["user_role"] == "admin")
     {
         $out = '<div class="container">
                     <div class="card rounded">
                         <div class="card-content ">
                             <div class="content">
-                                <form action="index.php?action=storeBlogPost" method="post">
+                                <form action="index.php?action=storeBlogPost&la='.$lang.'" method="post">
                                     <span class="is-size-3"> Creating a blog post </span>
                                     <br/>
                                     <br/>
@@ -64,7 +66,7 @@
                                             <button class="button is-info">Submit</button>
                                         </div>
                                         <div class="control">
-                                            <a class="button is-white"  href="index.php?page=manage">
+                                            <a class="button is-white" href="index.php?page=blog&la='.$lang.'">
                                                 <span>
                                                     Cancel
                                                 </span>

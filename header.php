@@ -31,7 +31,8 @@
     echo '
             <nav class="navbar" style="background-color: #448afc">
                 <div class="navbar-brand">
-                        <a class="navbar-item has-text-black-bis" href="../index.php" style="background-color: rgb(238, 238, 238)">
+                
+                        <a class="navbar-item has-text-black-bis" href="../index.php?la='.$lang.'" style="background-color: rgb(238, 238, 238)">
                             <img src="images\logo.gif" alt="Applied Experience" width="75" height="32">
                             <h3><strong>Applied</strong> Experience</h3>
                         </a>

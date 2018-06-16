@@ -10,14 +10,16 @@
                 if ($result) {
                     //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
-                    require_once('pages/manage.php');
+                    // require_once('pages/manage.php');
+                    require_once('pages/refresh.php');
                 }
             }   else if ($action == 'login') {
                 $result = authLogin($pdo,$request);
                 if ($result) {
                     //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
-                    require_once('pages/manage.php');
+                    // require_once('pages/manage.php');
+                    require_once('pages/refresh.php');
                 } else {
                     // Show login again
                     require_once('pages/auth/login.html');
@@ -41,10 +43,13 @@
                 
             }   else if ($action == 'logout') {
                 authLogout($pdo,$request);
+                require_once('pages/refresh.php');
             }   else if ($action == 'storeBlogPost') {
                 storeBlogPost($pdo,$request);
+                require_once('pages/refresh.php');
             }   else if ($action == 'updateBlogPost') {
                 updateblogPost($pdo,$request);
+                require_once('pages/refresh.php');
             }     else {
                 //if there was no action found in the URL then display the homepage with the according language
                 displayHomePage($lang);
