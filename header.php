@@ -62,9 +62,9 @@
                                 <div class="field is-grouped">
                     ';
         if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] == False) {
-            // require_once('pages/navbar/login_register_buttons.html');
+            // require_once(__DIR__.'/pages/navbar/login_register_buttons.html');
         } else if ( $_SESSION["authenticated"] == True ) {
-            require_once('pages/navbar/logout_button.php');
+            require_once(__DIR__.'/pages/navbar/logout_button.php');
         }
         echo            '
                             </div>
@@ -73,10 +73,10 @@
                         <div class="navbar-item">
                             <div class="field is-grouped">';
                             if ($lang == 'de') {
-                                    require_once('pages/navbar/deu.html');
+                                    require_once(__DIR__.'/pages/navbar/deu.html');
                             }
                             else if ($lang == 'en') {
-                                    require_once('pages/navbar/eng.html');
+                                    require_once(__DIR__.'/pages/navbar/eng.html');
                             }
                             echo'</div>
                         </div>

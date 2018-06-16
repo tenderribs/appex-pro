@@ -6,7 +6,7 @@
     <head>
         <?php
             //include metadata such as favicon and window size
-            require_once('metaData.php');
+            require_once(__DIR__.'/metaData.php');
         ?>
     </head>
     <body>
@@ -15,15 +15,15 @@
         <div class="hero-head">
             <?php     
                 //navbar
-                require_once('header.php');
+                require_once(__DIR__.'/header.php');
             ?>   
             </div>
             <!-- Hero content: will be in the middle -->
             <div class="hero-body">
             <?php
                 //all funcs
-                require_once('func.php');
-                require_once('router.php');
+                require_once(__DIR__.'/func.php');
+                require_once(__DIR__.'/router.php');
                 //get page name, language or action from the URL
                 $page = isset($_GET["page"]) ? $_GET["page"] : null;
                 $lang = isset($_GET["la"]) ? $_GET["la"] : 'en';
@@ -34,7 +34,7 @@
             </div>
             <!-- Hero footer: will stick at the bottom -->
             <div class="hero-foot">
-                <?php require_once('footer.php');   ?>
+                <?php require_once(__DIR__.'/footer.php');   ?>
             </div>
         </section>
     </body>
