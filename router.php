@@ -18,7 +18,26 @@
                     //if succesfully logged in, display welcome page
                     // displayHomePage($lang);
                     require_once('pages/manage.php');
+                } else {
+                    // Show login again
+                    require_once('pages/auth/login.html');
+                    // Error msg
+                    echo '  <div class="columns">
+                                <div class="column is-6-desktop is-offset-3-desktop">
+                                    <div class="card rounded">
+                                        <div class="card-content has-text-centered notification is-danger">
+                                            <span class="box-title is-size-4"><b></b></span>
+                                            <div class="content">
+                                                <div class="field">
+                                                    <p class="is-size-5">Invalid Email or Password</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>';
                 }
+
                 
             }   else if ($action == 'logout') {
                 authLogout($pdo,$request);
