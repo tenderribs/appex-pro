@@ -9,21 +9,21 @@
                         <div class="field">
                             <div class="control">
                             <label class="label">Email</label>
-                            <input class="input is-info" type="text" name="email" placeholder="Enter Email">
+                            <input required class="input is-info" type="email" name="email" placeholder="Enter Email">
                             </div>
                         </div>
 
                         <div class="field">
                             <div class="control">
                             <label class="label">Password</label>
-                            <input class="input is-info" type="password" name="password" placeholder="Enter Password">
+                            <input required class="input is-info" pattern=".{8,}" type="password" title="8 characters minimum" name="password" placeholder="Enter Password">
                             </div>
                         </div>
 
                         <div class="field">
                             <div class="control">
                             <label class="label">Password Confirmation</label>
-                            <input class="input is-info" type="password" name="password_confirmation" placeholder="Confirm the Password">
+                            <input required class="input is-info" pattern=".{8,}" type="password" title="8 characters minimum" name="password_confirmation" placeholder="Confirm the Password">
                             </div>
                         </div>
 

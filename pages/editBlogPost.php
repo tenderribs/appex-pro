@@ -16,7 +16,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                 <div class="field">
                                     <label class="label">Title</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="title" placeholder="Post Title" value="'.$post['title'].'">
+                                        <input required class="input" type="text" name="title" placeholder="Post Title" value="'.$post['title'].'">
                                         <input class="input" type="hidden" name="post_id" value="'.$post_id.'">
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                 <div class="field">
                                 <label class="label">Text</label>
                                     <div class="control">
-                                        <textarea name="text" class="textarea" placeholder="Textarea">'.$post['text'].'</textarea>
+                                        <textarea required name="text" class="textarea" placeholder="Textarea">'.$post['text'].'</textarea>
                                     </div>
                                 </div>
                             
@@ -58,10 +58,10 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                             
                                 <div class="field">
                                 <label class="label">Publish at</label>
-                                <div class="control">
-                                    <input id="published_at" class="input" type="datetime-local" name="published_at" >   
-                                
-                                </div>
+                                    <div class="control">
+                                        <input required id="published_at" class="input" type="datetime-local" name="published_at" >   
+                                    
+                                    </div>
                                 </div>
                             
                                 <br/>

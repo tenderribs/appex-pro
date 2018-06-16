@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                     <div class="field">
                                         <label class="label">Title</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="title" placeholder="Post Title">
+                                            <input required class="input" type="text" name="title" placeholder="Post Title">
                                         </div>
                                     </div>
 
@@ -32,8 +32,8 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
 
                                     <div class="field">
                                         <label class="label">Text</label>
-                                        <div class="control">
-                                            <textarea name="text" class="textarea" placeholder="Textarea"></textarea>
+                                        <div  class="control">
+                                            <textarea required name="text" class="textarea" placeholder="Textarea"></textarea>
                                         </div>
                                     </div>
 
@@ -54,7 +54,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                     <div class="field">
                                         <label class="label">Publish at</label>
                                         <div class="control">
-                                            <input class="input" type="datetime-local" name="published_at">   
+                                            <input required class="input" type="datetime-local" name="published_at">   
                                         </div>
                                     </div>
 
