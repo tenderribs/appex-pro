@@ -6,7 +6,7 @@
     <head>
         <?php
             //include metadata such as favicon and window size
-            require_once(__DIR__.'/metaData.php');
+            require_once(__DIR__.'/metadata.php');
         ?>
     </head>
     <body>
