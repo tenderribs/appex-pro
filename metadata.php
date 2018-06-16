@@ -1,7 +1,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="css\main.css">
+        <link rel="stylesheet" type="text/css" href="css\main.v1606208.css">
         
         <title>AppEx</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
@@ -23,4 +23,4 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <script src="js/app.js"></script>
+        <script src="js/app.v1606208.js"></script>
