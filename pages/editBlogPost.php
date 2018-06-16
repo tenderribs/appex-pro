@@ -72,11 +72,17 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                         <button class="button is-info">Save</button>
                                     </div>
                                     <div class="control">
-                                        <a class="button is-white" href="index.php?page=blog&la='.$lang.'">
-                                            <span>
+                                        <a class="button is-white has-text-grey-darker" href="index.php?page=blog&la='.$lang.'">
                                                 Cancel
-                                            </span>
                                         </a>
+                                    </div>
+                                    <div class="control">
+                                        <a class="button has-text-grey-darker is-warning" onclick="confirmDelete()" >
+                                                Unlock for deleting
+                                        </a>
+                                        <span id="deleteButton">
+                                            <a  class="button is-danger" disabled> DELETE </a>
+                                        </span>
                                     </div>
                                 </div>
                                 <script>
@@ -87,6 +93,14 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                     // here i slice that last Z from the string
                                     date = isoDate.slice(0,isoDate.length-1);
                                     document.getElementById("published_at").value = date;
+                                    function confirmDelete() {
+                                        var txt;
+                                        var r = confirm("Are sure you want to unlock it ?");
+                                        if (r == true) {
+                                            document.getElementById("deleteButton").innerHTML =  \'<a href="index.php?action=deleteBlogPost&post_id='.$post['id'].'&la='.$lang.'" class="button is-danger"  > DELETE </a>\';
+                                        } 
+
+                                    }
                                 </script>
                             </form>
                         </div>

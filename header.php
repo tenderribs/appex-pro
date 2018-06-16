@@ -9,18 +9,18 @@
     $content = [];
     
     $en['Learn_More_About_Us'] = '
-                                <a class="navbar-item " href="index.php?page=features&la=en">
+                                <a class="navbar-item'.($page == 'features' ? ' is-active ':'' ).'" href="index.php?page=features&la=en">
                                         Learn More / About Us
                                 </a>';
-    $de['Learn_More_About_Us'] = '<a class="navbar-item " href="index.php?page=features&la=de">
+    $de['Learn_More_About_Us'] = '<a class="navbar-item '.($page == 'features' ? ' is-active ':'' ).'" href="index.php?page=features&la=de">
                                         Mehr erfahren / Über uns
                                     </a>';
 
-    $en['Contact_Blog'] = '    <a class="navbar-item " href="index.php?page=blog&la=en">
+    $en['Contact_Blog'] = '    <a class="navbar-item '.($page == 'blog' ? ' is-active ':'' ).'" href="index.php?page=blog&la=en">
                                     Contact & Blog
                                 </a>';
         
-    $de['Contact_Blog'] = '    <a class="navbar-item " href="index.php?page=blog&la=de">
+    $de['Contact_Blog'] = '    <a class="navbar-item '.($page == 'blog' ? ' is-active ':'' ).'" href="index.php?page=blog&la=de">
                                     Kontakt und Blog
                                 </a>';
 
@@ -62,7 +62,7 @@
                                 <div class="field is-grouped">
                     ';
         if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] == False) {
-            require_once('pages/navbar/login_register_buttons.html');
+            // require_once('pages/navbar/login_register_buttons.html');
         } else if ( $_SESSION["authenticated"] == True ) {
             require_once('pages/navbar/logout_button.php');
         }

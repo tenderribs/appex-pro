@@ -1,15 +1,44 @@
 .tiles{margin-top: 1%;}
-body{     background-color: rgb(238, 238, 238);}
-.banner{  margin-top: 100px;
-          padding-top: 100px;}
-.media{margin-left: 6%;}
-.message-features{margin-left: 70px;
+body{     
+    background-color: rgb(238, 238, 238);
+}
+.button {
+    color: white !important;
+}
+.navbar-item {
+    color: white !important;
+    font-weight: 600 !important;
+}
+.navbar-link:hover, a.navbar-item:hover { 
+    /* color: black !important; */
+    background-color: #92baff !important;
+}
+
+.navbar-link.is-active, a.navbar-item.is-active { 
+    /* color: black !important; */
+    background-color: #0c409b !important;
+}
+
+@media screen and (max-width: 1087px){
+    .navbar-menu {
+        background-color: #448afc !important;
+    }
+}
+
+    /* background-color: #fff; */
+
+/* .banner{  margin-top: 100px;
+          padding-top: 100px;} */
+/* .media{margin-left: 6%;} */
+/* .message-features{
+    margin-left: 70px;
     margin-right: 70px;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-nav{margin-bottom: 30px;}
-.active{background-color: #448afc;}
+} */
+/* nav{margin-bottom: 30px;}
+.active{background-color: #ffffff;}
+.is-active{background-color: #ffffff;}
 .indented{margin-left:2em;}
 .learn{color: #0048d8;}
 nav:hover {background-color: #448afc;}
@@ -29,3 +58,4 @@ padding-bottom:30px;}
 .navbar-item:hover {
     color: rgb(46, 46, 46);
 }
+ */

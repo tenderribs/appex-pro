@@ -110,30 +110,32 @@
         }
     }
 
-    function deleteblogPost($pdo,$request) {
+    function deleteblogPost($pdo,$getRequest) {
 
         if (!checkIfUserIsAdmin()) {
             die();
         }
 
 
-        $post_id = !empty($request["post_id"]) ? $request["post_id"] : null;
-
+        $post_id = !empty($getRequest["post_id"]) ? $getRequest["post_id"] : null;
+        if ($post_id !== null) {
            //Remember: We are inserting a new row into our users table.
-        $sql = 'DELETE FROMT contents WHERE id = :post_id';
+           $sql = 'DELETE FROM contents WHERE id = :post_id';
        
-        $stmt = $pdo->prepare($sql);
-
-        //Bind our variables.
-        $stmt->bindValue(':post_id', $post_id,PDO::PARAM_STR);
-
-        //Execute the statement and insert the new account.
-        $result = $stmt->execute();
-
-        if ($result) {
-            //What you do here is up to you!
-            return true;
+           $stmt = $pdo->prepare($sql);
+   
+           //Bind our variables.
+           $stmt->bindValue(':post_id', $post_id,PDO::PARAM_STR);
+   
+           //Execute the statement and insert the new account.
+           $result = $stmt->execute();
+   
+           if ($result) {
+               //What you do here is up to you!
+               return true;
+           }
         }
+
     }
 
     function loadBlogPosts($pdo,$lang) {

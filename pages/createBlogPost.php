@@ -66,7 +66,7 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isse
                                             <button class="button is-info">Submit</button>
                                         </div>
                                         <div class="control">
-                                            <a class="button is-white" href="index.php?page=blog&la='.$lang.'">
+                                            <a class="button is-white has-text-grey-darker" href="index.php?page=blog&la='.$lang.'">
                                                 <span>
                                                     Cancel
                                                 </span>

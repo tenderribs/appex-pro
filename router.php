@@ -3,6 +3,7 @@
         if ($page == '') {
             //empty page in url, check if there are any actions requested
             $request = $_POST;   
+            $getRequest = $_GET;   
 
             if ($action == 'register') {
                 // echo 'pdo '.isset($pdo);
@@ -50,11 +51,14 @@
             }   else if ($action == 'updateBlogPost') {
                 updateblogPost($pdo,$request);
                 require_once('pages/refresh.php');
-            }     else {
+            }   else if ($action == 'deleteBlogPost') {
+                deleteBlogPost($pdo,$getRequest);
+                require_once('pages/refresh.php');
+            }      else {
                 //if there was no action found in the URL then display the homepage with the according language
                 displayHomePage($lang);
             }
-
+            
         } else if ($page == 'features') {
             displayFeaturesPage($lang);
         } else if ($page == 'register') {
