@@ -60,15 +60,24 @@ echo '<div class="marginTop">
                                             .$post['title'].
                                             '<span class="tag ">'
                                                 .$post['published_at'].
-                                            '</span> 
-                                        </p> 
+                                            '</span>'; 
+                        if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isset($_SESSION["user_role"])  && $_SESSION["user_role"] == "admin") {
+                            echo '  <a class="button" style="background-color: #30a5ff" href="index.php?page=editBlogPost&post_id='.$post['id'].'">
+                                        <span>
+                                            Edit
+                                        </span>
+                                    </a>';
+                        }
+
+                        echo            '</p> 
                                         <div class="message-body">
-     
                                             <p>'.$post['text'].'</p>
+                                        </div>
                                     </article>
                                  </article>';
                         echo '</div>';
- 
+                 
+
                         
                         // echo "text : ".$post['text'];
                         // echo "<br/>";

@@ -44,7 +44,7 @@
         $result = $stmt->execute();
         
         //Construct the SQL statement and prepare it.
-        $sql = "SELECT id, email FROM users WHERE email = :email";
+        $sql = "SELECT id, email, role  FROM users WHERE email = :email";
         $stmt = $pdo->prepare($sql);
 
         //Bind the provided email to our prepared statement.
@@ -68,7 +68,7 @@
         $hashedPassword = hash_password($password);
         
         //Construct the SQL statement and prepare it.
-        $sql = "SELECT id, email FROM users WHERE email = :email AND password = :hashedPassword";
+        $sql = "SELECT id, email, role FROM users WHERE email = :email AND password = :hashedPassword";
         $stmt = $pdo->prepare($sql);
 
         //Bind the provided email to our prepared statement.
@@ -122,6 +122,7 @@
         $_SESSION["loginDateTime"] = date("Y-m-d H:i:s");
 
         $_SESSION["user_id"] = $user['id'];
+        $_SESSION["user_role"] = $user['role'];
         $_SESSION["email"] = $user['email'];
 
         return $_SESSION;
