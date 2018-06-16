@@ -60,7 +60,7 @@
         if (session_status() === PHP_SESSION_NONE || !isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] == False) {
             require_once('pages/navbar/login_register_buttons.html');
         } else if ( $_SESSION["authenticated"] == True ) {
-            require_once('pages/navbar/logout_button.html');
+            require_once('pages/navbar/logout_button.php');
         }
         echo            '
                             </div>

@@ -1,25 +1,27 @@
 <?php
-    function checkIfUserIsAdmin(){
+    function checkIfUserIsAdmin($showError=true){
         if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isset($_SESSION["user_role"])  && $_SESSION["user_role"] == "admin")
         {
-                return true;
+            return true;
                 
         } else  {
             // Error msg
+            if ($showError) {
                 echo '  <div class="container has-text-centered ">
-                <div class="column is-6-desktop is-offset-3-desktop">
-                    <div class="card rounded">
-                        <div class="card-content has-text-centered notification is-danger">
-                            <span class="box-title is-size-4"><b></b></span>
-                            <div class="content">
-                                <div class="field">
-                                    <p class="is-size-5">Oh oh!! Permission denied ...</p>
+                    <div class="column is-6-desktop is-offset-3-desktop">
+                        <div class="card rounded">
+                            <div class="card-content has-text-centered notification is-danger">
+                                <span class="box-title is-size-4"><b></b></span>
+                                <div class="content">
+                                    <div class="field">
+                                        <p class="is-size-5">Oh oh!! Permission denied ...</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>';
+                </div>';
+            }
             return false;
         }
     }
@@ -85,7 +87,7 @@
         }
 
         //Remember: We are inserting a new row into our users table.
-        $sql = 'UPDATE contents SET title= :title, text= :text, lang= :lang, published_at= :published_at, published= :published WHERE id = :post_id';
+        $sql = 'UPDATE contents SET title= :title, text= :text, lang= :lang, published_at= :published_at, published= :published , updated_at= NOW() WHERE id = :post_id';
        
         $stmt = $pdo->prepare($sql);
 
@@ -135,12 +137,18 @@
     }
 
     function loadBlogPosts($pdo,$lang) {
-        //Construct the SQL statement and prepare it.
-        $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE published = :published AND lang = :lang AND published_at <= NOW()";
-        $stmt = $pdo->prepare($sql);
 
-        //Bind the provided email to our prepared statement.
-        $stmt->bindValue(':published', true,PDO::PARAM_INT);
+        //Construct the SQL statement and prepare it.
+        if (!checkIfUserIsAdmin(false)) {
+            $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE published = :published AND lang = :lang AND published_at <= NOW()";
+            $stmt = $pdo->prepare($sql);
+            //Bind the provided email to our prepared statement.
+            $stmt->bindValue(':published', true,PDO::PARAM_INT);
+        } else {
+            $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE lang = :lang";
+            $stmt = $pdo->prepare($sql);
+        }
+        
         $stmt->bindValue(':lang', $lang,PDO::PARAM_STR);
 
         //Execute.
@@ -156,7 +164,11 @@
     }
 
     function loadBlogPostById($pdo,$post_id) {
+        if (!checkIfUserIsAdmin()) {
+            die();
+        }
         //Construct the SQL statement and prepare it.
+        
         $sql = "SELECT id, title, text, lang, published, published_at, user_id, created_at FROM contents WHERE id = :post_id";
         $stmt = $pdo->prepare($sql);
 

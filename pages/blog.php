@@ -3,10 +3,7 @@
     $posts = loadBlogPosts($pdo,$lang);
 
 
-echo '<div class="marginTop">
-        <br>
-        <br>
-        <div class="tiles" class="marginTop">
+echo ' <div class="tiles">
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-8">
                     <div class="tile">
@@ -49,24 +46,39 @@ echo '<div class="marginTop">
                 </div>';
 
                 if ($posts) {
-                    //if succesfully logged in, display welcome page
-                    // displayHomePage($lang);
                     foreach ($posts as $post ) {
-                        echo '<div class="tile is-parent">';
-                        echo '<article class="tile is-child box">
+                        $colorClass = 'is-white';
+                        $stateName = '';
+                        if ($post['published_at'] >= date("Y-m-d H:i:s")) {
+                            $colorClass = 'is-success';
+                            $stateName = 'Ready for publish';
+                        } 
+                        if ($post['published'] == false ) {
+                            $colorClass = 'is-danger';
+                            $stateName = 'Draft';
+                        }
+
+                        echo '<div class="tile  is-parent">';
+                        echo '<article class="tile notification '. $colorClass.' is-child box">
                                    
                                     <article class="is-dark">
                                         <p class="title">'
                                             .$post['title'].
-                                            '<span class="tag ">'
-                                                .$post['published_at'].
+                                            ' &nbsp;<span class="tag ">'
+                                               .$post['published_at'].
                                             '</span>'; 
                         if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION["email"]) && isset($_SESSION["user_role"])  && $_SESSION["user_role"] == "admin") {
-                            echo '  <a class="button" style="background-color: #30a5ff" href="index.php?page=editBlogPost&post_id='.$post['id'].'">
+                            echo '  <a class="button" style="background-color: #30a5ff" href="index.php?page=editBlogPost&post_id='.$post['id'].'&la='.$lang.'">
                                         <span>
                                             Edit
                                         </span>
-                                    </a>';
+                                    </a>
+                                    
+                                    <span>
+                                    '.$stateName.'
+                                    </span>'
+                                    
+                                    ;
                         }
 
                         echo            '</p> 
@@ -89,7 +101,5 @@ echo '<div class="marginTop">
                     }
                 }
 
-        echo '</div>
-        </div>
-        <p class="bottomspaceBlog">';
+        echo '</div>';
 ?>

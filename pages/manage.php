@@ -1,5 +1,4 @@
-<br>
-<br>
+
 <div class="box" class="marginTop">
   <article class="media">
     <div class="media-content">
