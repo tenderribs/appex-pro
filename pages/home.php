@@ -34,17 +34,11 @@
                     <div class="content">
                         <article class="message is-dark">
                             <div class="message-body">
-                                <p>AppEx ist eine Web-basiertes Planungs- und Analysetool für alle, die in Planungs- und
-                                    Bauprojekten koordinative Aufgaben wahrnehmen. AppEx basiert auf Erfahrungen. Es
-                                    ermöglicht Nutzern die Planung von Aktivitäten mit Hilfe von eigenen oder in einer
-                                    Gruppe geteilten Erfahrungen.
-                                </p>
-                                <br>
-                                <p>AppEx ermöglicht es, Lösungen zu Problemen zu dokumentieren und bei Phasenende die Qualität
-                                    von Arbeitsprodukten oder Dienstleistungen zu überprüfen.</p>
-                                <br>
-                                <p>AppEx visualisiert den Projektstatus grafisch, sodass der Stand von Planung und Qualitätssicherung
-                                    jederzeit klar erkennbar sind.
+                                <p>
+                                AppEx ist eine Web-basiertes Planungs- und Qualitätsmanagement Tool. AppEx dokumentiert Erfahrungen 
+                                in Projekten und wandelt diese in Lehren um, damit Fehler vermieden und Prozesse verbessert werden können.
+                                 AppEx eignet sich für alle Firmen, die in Planungs- und Bauprojekten koordinative Aufgaben wahrnehmen 
+                                 (Architekten, Generalplaner, Baumanager, Generalunternehmer, Kostenplaner, Bauherrenvertreter).
                                 </p>
                             </div>
                         </article>
@@ -66,9 +60,8 @@
                     <div class="content">
                         <article class="message is-dark">
                             <div class="message-body">
-                                <p>Applied Experience GmbH entwickelt und vertreibt die AppEx Software, welche von Personen
-                                    und Firmen eingesetzt werden kann. Für Firmen bieten wir auch Beratung im Aufbau von
-                                    Wissensmanagement Expertise an.</p>
+                                <p>Applied Experience GmbH entwickelt und vertreibt die AppEx Software. 
+                                Wir beraten Sie bei der Einführung der Software und im Aufbau von Wissensmanagement Kompetenzen.</p>
                             </div>
                         </article>
                     </div>';

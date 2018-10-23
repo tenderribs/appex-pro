@@ -20,9 +20,9 @@
         ';
         $de['try_it_out'] = '
                         <p class="title">Testen</p>
-                        <p>Die neueste Version von Applied Experience\'s Wissensmanagement Software, AppEx, ist in Beta
-                            Modus. Um AppEx auszuprobieren und so Teil einer wachsenden Gruppe von Beta Testern zu
-                            werden, können Sie uns unter info@appex.ch kontaktieren.
+                        <p>Bitte nehmen Sie unverbindlich Kontakt mit uns auf,
+                         um die Funktionalität und den Nutzen der AppEx Software kennen zu lernen und um eine mögliche Einführung zu diskutieren.
+                          Sie erreichen uns unter info@appex.ch.
                         </p>
         ';
 
@@ -38,13 +38,10 @@
         ';
         $de['about_us'] = '
                     <p class="title">Über uns</p>
-                    <p>Applied Experience, Inc. wurde 2005 im Silicon Valley gegründet und bot neben Intranet Dienstleistungen
-                        die Wissensmanagement Software Connected Projects an, welche unter anderen von grossen nationalen
-                        Generalunternehmern und Bauherren verwendet wurde.</p>
-                    <br>
-                    <p>Aktuell ist Applied Experience GmbH in der Schweiz angesiedelt und international mit der neuen
-                        und stark verbesserten Application AppEx tätig.
-                    </p>
+                    <p>Applied Experience, Inc. wurde 2005 im Silicon Valley gegründet und bot neben Intranet Dienstleistungen die Wissensmanagement Software Connected Projects an,
+                     welche bei grossen nationalen Generalunternehmern und Bauherren Anwendung fand.</p>
+                     <br/>
+                    <p>Seit 2009 ist die Firma in der Schweiz angesiedelt und bietet die völlig neue AppEx Software für Wissensmanagement an.</p>
         ';
 
         $en['how_does_it_work'] = '
