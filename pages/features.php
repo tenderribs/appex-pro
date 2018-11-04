@@ -70,7 +70,7 @@
                     <p class="title">Wie funktioniert es?</p>
                     <p>AppEx ist eine Web-basiertes Planungs- und Analysetool für alle, die in Planungs- und Bauprojekten
                         koordinative Aufgaben wahrnehmen (Architekten, Baumanager, Generalunternehmer, Bauherrenvertreter).
-                        AppEx kann von Einzelpersonen oder Firmenjeder Grösse eingesetzt werden. AppEx ermöglicht es,
+                        AppEx kann von Einzelpersonen oder Firmen jeder Grösse eingesetzt werden. AppEx ermöglicht es,
                         Erfahrungen von Personen und Firmen zu dokumentieren und anwendbar zu machen.</p>
                     <br>
                     <p>AppEx operiert mit einem anpassbaren Gerüst aus Projektphasen und Gewerken. Dieses spezielle Rahmenwerk
