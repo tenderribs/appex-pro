@@ -17,6 +17,7 @@ echo ' <div class="tiles">
                                     <div class="message-body">
                                         <p class="title">Blog</p>
                                         <p>Blog posts coming soon.</p>
+                                        <p>Blog kommt demnächst.</p>
                                         <br>
                                     </div>
                                 </article>
@@ -39,6 +40,9 @@ echo ' <div class="tiles">
                                 <p class="title">Contact us</p>
                                 <p>Applied Experience GmbH is located in Baden, Switzerland.
                                     <br>Please contact us at info@appex.ch.
+                                </p>
+                                <p>Applied Experience GmbH hat ihren Sitz in Baden, AG.
+                                    <br>Bitte kontaktieren Sie uns unter info@appex.ch.
                                 </p>
                         </article>
                     </article>
